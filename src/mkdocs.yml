@@ -1,0 +1,78 @@
+# mkdocs.yml
+site_name: Sistema de Gerenciamento de Atendimentos
+site_description: Documentação do sistema de gerenciamento de atendimentos
+site_author: Angelo Gagno
+
+# Tema e navegação
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Mudar para modo escuro
+
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Mudar para modo claro
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - toc.follow
+    - content.code.copy
+
+# Estrutura do site
+nav:
+  - Home: index.md
+  - Instalação: instalacao.md
+  - Componentes:
+      - Backend: backend.md
+      - Frontend: frontend.md
+  - Como Usar:
+      - Funcionalides: funcionalidades.md
+      - Configuração Avançada: configuracao_avancada.md
+  - Troubleshooting: troubleshooting.md
+
+# Plugins e extensões
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - tables
+
+# Configuração extra
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/angelogagno
+    - icon: fontawesome/brands/github
+      link: https://github.com/angelogagno/Formulario_Atendimento
+    
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+
+# Repositório (substitua pelo seu repositório)
+repo_url: https://github.com/angelogagno/Formulario_Atendimento
+repo_name: Formulario_Atendimento
